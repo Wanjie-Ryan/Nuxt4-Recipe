@@ -8,13 +8,13 @@ export default {
       "apple-green": "#046E1B",
       "dire-wolf": "#292727",
     },
-    fontFamily:{
+    fontFamily: {
       Montserrat: "Montserrat , sans-serif",
     },
-    container:{
+    container: {
       center: true,
       padding: "2rem",
-    }
+    },
   },
   plugins: [],
 };
