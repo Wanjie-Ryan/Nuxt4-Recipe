@@ -2,7 +2,7 @@
   <header class="py-4 border-b">
     <nav class="container flex items-center">
       <NuxtLink to="/" class="flex items-center gap-1">
-        <NuxtImg src="/logo.png" alt="Logo" width="56px" />
+        <NuxtImg src="/logo.png" alt="Logo" format="webp" width="56px" />
         <span class="text-xl font-bold">My Recipes</span>
       </NuxtLink>
       <ul class="flex gap-6 ml-auto text-xl font-bold capitalize">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { NuxtImg } from '#build/components';
+// import { NuxtImg } from '#build/components';
 
 export default {};
 </script>
