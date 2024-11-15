@@ -28,11 +28,39 @@
         </div>
       </div>
     </section>
+    <section class="container py-20">
+      <h2 class="mb-2 text-3xl lg:text5xl">Discover, Create, Share</h2>
+      <p class="mb-8 text-lg lg:text-xl">Check out our most popular recipes</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
+        <div v-for="recipe in data?.recipes" class="flex flex-col rounded-md shadow">
+          <NuxtImg :src="recipe.image" sizes="xs:100vw sm:50vw lg:400px" format="webp" densities="x1" alt="" class="rounded-t-md"/>
+          <div class="flex flex-col flex-1 px-4 py-6">
+            <p>{{recipe.name}}</p>
+            <p>{{ recipe.cookTimeMinutes }}</p>
+            <p>{{recipe.caloriesPerSaving}}</p>
+            <p>{{ recipe.rating }}{{ recipe.reviewCount }}</p>
+            
+            <NuxtLink :to="`recipes/${recipe.id}`" class="self-start px-4 py-2 text-base text-white bg-yellow-400 rounded-md cursor-pointer lg:text-lg">View</NuxtLink>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+
+      
+    </section>
   </main>
 </template>
 
-<script>
-export default {};
+<script setup>
+// const {data, error} = await useAsyncData('recipes', ()=> $fetch('https://dummyjson.com/recipes?limit=12'))
+
+const { data, error } = await useFetch(
+  "https://dummyjson.com/recipes?limit=12"
+);
+console.log("recipe data", data.value);
 </script>
 
 <style></style>
